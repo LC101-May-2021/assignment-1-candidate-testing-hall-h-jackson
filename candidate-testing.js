@@ -52,14 +52,18 @@ function runProgram() {
   console.log("Hello " + candidateName + ".");
 
   askQuestion();
-  console.log(candidateAnswers);
   gradeQuiz(this.candidateAnswers);
-  console.log(ca);
+ 
   
 4
   let score = (ca/questions.length)*100;
+  if (score < 80) {
+    console.log(">>> Overall Grade: ", score, "% (", ca, "of 5 responses correct) <<<\n>>> Status: FAILED <<<")
+  } else {
+    console.log(">>> Overall Grade: ", score, "% (", ca, "of 5 responses correct) <<<\n>>> Status: PASS <<<")
+  }
 
-  console.log(score);  
+ 
 }
 
 

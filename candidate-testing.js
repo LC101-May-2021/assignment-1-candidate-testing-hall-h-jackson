@@ -11,16 +11,19 @@ let correctAnswer = "Sally Ride";
 let candidateAnswer = '';
 let questions = ["Who was the first American woman in space? ", "True or false: 5 kilometer == 5000 meters? ", "(5+3)/2*10=? ", "Given the array [8, 'Orbit', 'Trajectory', 45]. what entry is at index 2? ", "What is the minimum crew size for the ISS? "];
 let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
-let correctAnswersB = ["sally ride", "true", "40", "trajectory", "3"];
-let candidateAnswers = [].map(c=> v.toLowerCase());
-let result = [];
+let candidateAnswers = [];
+
 let ca = 0;
-let grade = (ca/5)*100
+// let score = (ca/questions.length)*100;
+
+
 
 function askForName() {
     candidateName = input.question("What is your name? ");
     
 }
+
+ 
 
 function askQuestion() {
   for (let i = 0; i < questions.length; i++) {
@@ -28,34 +31,19 @@ function askQuestion() {
   }
 }
 
-function forceLower(candidateAnswers) {
-  for (let i = 0; i < candidateAnswers.length; i++) {
-    candidateAnswers[i].toLowerCase();
-  } 
-}
 
-function gradeQuiz(candidateAnswers) {
+
+function gradeQuiz(questions) {
      for (let i = 0; i < candidateAnswers.length; i++) {
-        if (candidateAnswers[i] === correctAnswersB[i]) {
-          result.push("correct")
-        } else {
-          result.push("incorrect")
+        if (candidateAnswers[i].toLowerCase()===correctAnswers[i].toLowerCase()) {
+          ca++
         }
      }
 }
 
-    
-
-function gradeQuiz(result) {
-  for (let i = 0; i < result.length; i++) {
-    if (result[i] === "correct") {
-    ca = ca + 1
-    }   
-  }
-}
 
 
-// function gradeQuiz()
+
 
 
 function runProgram() {
@@ -64,7 +52,14 @@ function runProgram() {
   console.log("Hello " + candidateName + ".");
 
   askQuestion();
+  console.log(candidateAnswers);
   gradeQuiz(this.candidateAnswers);
+  console.log(ca);
+  
+4
+  let score = (ca/questions.length)*100;
+
+  console.log(score);  
 }
 
 

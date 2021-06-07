@@ -14,7 +14,7 @@ let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 let candidateAnswers = [];
 
 let ca = 0;
-// let score = (ca/questions.length)*100;
+
 
 
 
@@ -36,11 +36,10 @@ function askQuestion() {
 function gradeQuiz(questions) {
      for (let i = 0; i < candidateAnswers.length; i++) {
         if (candidateAnswers[i].toLowerCase()===correctAnswers[i].toLowerCase()) {
-          ca++
+        ca++ 
         }
      }
-}
-
+} 
 
 
 
@@ -48,19 +47,18 @@ function gradeQuiz(questions) {
 
 function runProgram() {
   askForName();
-  // TODO 1.1c: Ask for candidate's name //
   console.log("Hello " + candidateName + ".");
 
   askQuestion();
   gradeQuiz(this.candidateAnswers);
  
   
-4
-  let score = (ca/questions.length)*100;
+let score = (ca/questions.length)*100;
+
   if (score < 80) {
-    console.log(">>> Overall Grade: ", score, "% (", ca, "of 5 responses correct) <<<\n>>> Status: FAILED <<<")
+    console.log("\n\nCandidate Name: ", candidateName,"\n1) ", questions[0], "\nYour Answer: ", candidateAnswers[0], "\nCorrect Answer: ", correctAnswers[0], "\n\n2) ", questions[1], "\nYour Answer: ", candidateAnswers[1], "\nCorrect Answer: ", correctAnswers[1], "\n\n3) ", questions[2], "\nYour Answer: ", candidateAnswers[2], "\nCorrect Answer: ", correctAnswers[2], "\n\n4) ", questions[3], "\nYour Answer: ", candidateAnswers[3], "\nCorrect Answer: ", correctAnswers[3], "\n\n5) ", questions[4], "\nYour Answer: ", candidateAnswers[4], "\nCorrect Answer: ", correctAnswers[4], "\n\n>>> Overall Grade: ", score, "% (", ca, "of 5 responses correct) <<<\n>>> Status: FAILED <<<")
   } else {
-    console.log(">>> Overall Grade: ", score, "% (", ca, "of 5 responses correct) <<<\n>>> Status: PASS <<<")
+    console.log("\n\nCandidate Name: ", candidateName,"\n1) ", questions[0], "\nYour Answer: ", candidateAnswers[0], "\nCorrect Answer: ", correctAnswers[0], "\n\n2) ", questions[1], "\nYour Answer: ", candidateAnswers[1], "\nCorrect Answer: ", correctAnswers[1], "\n\n3) ", questions[2], "\nYour Answer: ", candidateAnswers[2], "\nCorrect Answer: ", correctAnswers[2], "\n\n4) ", questions[3], "\nYour Answer: ", candidateAnswers[3], "\nCorrect Answer: ", correctAnswers[3], "\n\n5) ", questions[4], "\nYour Answer: ", candidateAnswers[4], "\nCorrect Answer: ", correctAnswers[4], "\n\n>>> Overall Grade: ", score, "% (", ca, "of 5 responses correct) <<<\n>>> Status: PASS <<<")
   }
 
  
